@@ -4,7 +4,7 @@ import sys
 cpm2_1 = bminf.models.CPM2()
 
 
-def generate(text, min_iter=10):
+def generate(text, min_iter=5):
     model = cpm2_1
     print("Input: ", text)
     sys.stdout.write("Output: %s" % text)
@@ -18,7 +18,7 @@ def generate(text, min_iter=10):
             top_p=None,
             temperature=0.85,
             frequency_penalty=0,
-            presence_penalty=0,
+            presence_penalty=1,
         )
         text += value
         iter += 1
