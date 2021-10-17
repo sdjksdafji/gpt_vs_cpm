@@ -1,4 +1,6 @@
 import input.bu_bu_gao
+import input.nao_bai_jin
+import input.the_elder
 
 import model.cpm2
 
