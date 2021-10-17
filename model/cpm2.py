@@ -4,13 +4,13 @@ import sys
 cpm2_1 = bminf.models.CPM2()
 
 
-def generate(text, min_iter=5):
+def generate(text, min_iter=5, max_iter=10):
     model = cpm2_1
     print("Input: ", text)
     sys.stdout.write("Output: %s" % text)
     stoped = False
     iter = 0
-    while iter < min_iter or not stoped:
+    while (iter < min_iter or not stoped) and (not iter > max_iter):
         value, stoped = model.generate(
             input_sentence=text,
             max_tokens=32,
