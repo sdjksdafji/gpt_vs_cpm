@@ -4,7 +4,7 @@ import sys
 cpm2_1 = bminf.models.CPM2()
 
 
-def generate(text, min_iter=5, max_iter=10):
+def generate(text, min_iter=2, max_iter=5):
     model = cpm2_1
     print("Input: ", text)
     sys.stdout.write("Output: %s" % text)
