@@ -13,7 +13,7 @@ def generate(text, min_iter=5):
     while iter < min_iter or not stoped:
         value, stoped = model.generate(
             input_sentence=text,
-            max_tokens=512,
+            max_tokens=32,
             top_n=5,
             top_p=None,
             temperature=0.95,
