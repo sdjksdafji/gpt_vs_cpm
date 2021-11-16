@@ -17,8 +17,8 @@ text = """
 """
 
 for result in cpm2.fill_blank(text,
-                              # top_p=1.0,
-                              # top_n=10,
+                              top_p=0.9,
+                              top_n=25,
                               temperature=0.05,
                               frequency_penalty=0,
                               presence_penalty=0,
