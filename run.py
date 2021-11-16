@@ -14,6 +14,7 @@ text = """
 夏清心是<span>
 <span>是主角
 <span>在<span>做了<span>,结果<span>
+令人震惊！<span>当众打脸<span>
 """
 
 for result in cpm2.fill_blank(text,
