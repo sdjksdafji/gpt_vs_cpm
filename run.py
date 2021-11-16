@@ -22,7 +22,7 @@ for result in cpm2.fill_blank(text,
                               temperature=0.2,
                               frequency_penalty=0,
                               presence_penalty=0,
-                              max_tokens=32
+                              max_tokens=128
                               ):
     value = result["text"]
     text = text.replace("<span>", "\033[0;32m" + value + "\033[0m", 1)
