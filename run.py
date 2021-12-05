@@ -24,6 +24,9 @@ template = """
 文章简介是：令人震惊！<span>在<span>做了<span>,结果，<span>嫁给老头子<span>！
 """
 
+chapter_xs = "“初宁，回来了啊，妈妈给你做了你最爱吃的糖醋排骨，快点洗手来吃饭。”\n母亲慈爱又关切的声音响起的时候，叶初宁的目光，看向了一旁的继父，心底有一种异样感。\n" \
+             "为了不让继父继姐不开心，在他面前，母亲对她都是十分冷淡严厉，甚至连个佣人都不如。\n今天为何这般反常？\n"
+
 chapter_short = "“初宁，回来了啊，妈妈给你做了你最爱吃的糖醋排骨，快点洗手来吃饭。”\n母亲慈爱又关切的声音响起的时候，叶初宁的目光，看向了一旁的继父，心底有一种异样感。\n" \
                 "为了不让继父继姐不开心，在他面前，母亲对她都是十分冷淡严厉，甚至连个佣人都不如。\n今天为何这般反常？\n" \
                 "其实这么多年下来，她也已经习惯了母亲对她的态度，做为二婚，又带着自己，母亲嫁到白家后的日子并不好过，继父是个十分冷漠又自私的人，这些年生意做起来了，对她就更冷漠了。\n“妈。”叶初宁轻唤了一声。\n" \
@@ -74,13 +77,13 @@ chapter_long = "太平洋。\r\n一座钢铁建筑随着洋流缓缓漂浮于海
 #     text = text.replace("<span>", "\033[0;32m" + value + "\033[0m", 1)
 # print(text)
 
-text = template.format(original=chapter_short)
+text = template.format(original=chapter_xs)
 ctx, sampler, spans_position = cpm2.pre_processing(text,
-                          # top_p=0.9,
-                          # top_n=25,
-                          temperature=0.2,
-                          frequency_penalty=0,
-                          presence_penalty=0,
-                          max_tokens=128)
+                                                   # top_p=0.9,
+                                                   # top_n=25,
+                                                   temperature=0.2,
+                                                   frequency_penalty=0,
+                                                   presence_penalty=0,
+                                                   max_tokens=128)
 
 print(ctx.hidden_states.shape)
