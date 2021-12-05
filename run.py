@@ -61,7 +61,7 @@ chapter_long = "太平洋。\r\n一座钢铁建筑随着洋流缓缓漂浮于海
                "“离这里三海里的小岛上有一架直升飞机，您可以驾驶它离开。”\r\n亨利朝着秦嬴郑重一拜，说道。\r\n秦嬴点点头。\r\n转身就要离去。\r\n“等下！”亨利犹豫一下，忽然又道。\r\n" \
                "“还有一件事情阎君可能并不知晓。我怀疑：当年那起事件中阎君未婚妻并未丧生！”\r\n“什么？”\r\n从始至终冷漠无情、波澜不惊的秦嬴，声音中多出一丝颤音。 "
 
-text = template.format(original=chapter_long)
+text = template.format(original=chapter_short)
 for result in cpm2.fill_blank(text,
                               # top_p=0.9,
                               # top_n=25,
@@ -73,3 +73,13 @@ for result in cpm2.fill_blank(text,
     value = result["text"]
     text = text.replace("<span>", "\033[0;32m" + value + "\033[0m", 1)
 print(text)
+
+ctx, sampler, spans_position = cpm2.pre_processing(chapter_short,
+                          # top_p=0.9,
+                          # top_n=25,
+                          temperature=0.2,
+                          frequency_penalty=0,
+                          presence_penalty=0,
+                          max_tokens=128)
+
+print(ctx.hidden_states.shape)
