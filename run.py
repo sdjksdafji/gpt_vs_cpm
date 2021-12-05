@@ -74,7 +74,7 @@ for result in cpm2.fill_blank(text,
     text = text.replace("<span>", "\033[0;32m" + value + "\033[0m", 1)
 print(text)
 
-ctx, sampler, spans_position = cpm2.pre_processing(chapter_short,
+ctx, sampler, spans_position = cpm2.pre_processing(text,
                           # top_p=0.9,
                           # top_n=25,
                           temperature=0.2,
